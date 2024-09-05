@@ -1,0 +1,67 @@
+/*#estilo .primer em{
+    background-color: cadetblue;
+    color: blueviolet;
+}*/
+/* body{
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.rojo{
+    color: red;
+    font-weight: bold;
+
+} */
+body {
+    background-color: rgb(2, 59, 2);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    padding: 20px;
+}
+#tabla {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    background-color: #000304;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.book-list {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(60, 2, 2);
+    border-radius: 20px;
+    /* redondeo de las esquina*/
+    box-shadow: 0 0 20px rgba(125, 12, 125, 5);
+}
+
+.book-images {
+    width: 150px;
+    height: 220px;
+}
+
+/*button{
+    background-color:  aqua;
+    transition: background-color 1.5s;
+    transition: color 1.5s;
+}
+button:hover{
+    background-color: chartreuse;
+    color: yellow;
+}*/
+button {
+    background-color: rgb(128, 136, 136);
+    color: black;
+    transition-property: all;
+    transition-duration: 5s;
+    transition-timing-function: linear;
+    transition-delay: 0.5s;
+}
+
+button:hover {
+    background-color: chartreuse;
+    color: yellow;
+    transform: scale(2.1);
+    border-radius: 15px;
+}
