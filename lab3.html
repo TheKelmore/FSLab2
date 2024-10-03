@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca SUL</title>
+    <script src="./lab3.js"></script>
+    <link rel="stylesheet" href="./misestilos.css">
+</head>
+
+<body>
+    <h1> Biblioteca S.U.L. </h1>
+    <iframe src="https://giphy.com/embed/qJFNKmwkglLZPPOHd7" width="225" height="240" frameBorder="0"
+        class="giphy-embed" allowFullScreen></iframe>
+    <p><a href="https://giphy.com/gifs/library-support-your-local-qJFNKmwkglLZPPOHd7">via GIPHY</a></p>
+    <button onclick="show()" type="button">Consultar libros</button>
+    <button onclick="search()" type="button">Formulario de busqueda</button>
+    <button onclick="getData()" type="button">API</button>
+    <button onclick="endPo()" type="button">END POINT</button>
+    <br />
+    <br />
+    <div id="end-point" hidden>
+        <form name="formulario-pagina" action="#" method="get">
+            <label for="page">Pagina</label>
+            <select name="paginas" id="page">
+                <option value="pag1.html">pag1.html</option>
+                <option value="pag2.html">pag2.html</option>
+            </select>
+            <br />
+            <label for="method">Método</label>
+            <select name="metodos" id="method">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+            </select>
+            <br />
+            <input type="button" name="enviar" value="Solicitar Archivo" onclick="getPages()" />
+        </form>
+        <iframe id="inlineFrameExample" title="Inline Frame Example" width="300" height="200"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+        </iframe>
+    </div>
+    <div id="table">
+        <table id="tabla" hidden>
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Titulo</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div id="books" class="container" hidden>
+        <div class="book-list">
+            <!-- Ejemplo de un libro -->
+            <div class="book-item">
+                <br />
+                <img class="book-images"
+                    src="https://panamericana.vtexassets.com/arquivos/ids/163851-1600-auto?v=636208742150270000&width=1&height=auto&aspect=true"
+                    alt="Libro 1">
+                <h3>Santa Biblia</h3>
+                <p>ISBN: 01</p>
+                <p>Autor: Varios</p>
+                <p>Fecha edición: 550 D.C.</p>
+                <p>Número de páginas: 788</p>
+                <p>Cantidad de ejemplares: 5</p>
+                <p>Cantidad de ejemplares disponibles: 5</p>
+                <p>Resumen: El libro de libros.</p>
+                <p>Tipo de medio del ejemplar: Físico</p>
+                <p>Tema: Religión </p>
+                <p>Año: 2019 </p>
+                <p class="price">COP $21.000</p>
+                <a href="https://www.panamericana.com.co/santa-biblia-la-santa-biblia-de-las-americas/p" target="_blank"
+                    rel="noopener noreferrer"> Enlace</a>
+            </div>
+
+            <div class="book-item">
+                <br />
+                <img class="book-images"
+                    src="https://panamericana.vtexassets.com/arquivos/ids/503217-1600-auto?v=638241724967900000&width=1600&height=auto&aspect=true"
+                    alt="Libro 2">
+                <h3>La iliada</h3>
+                <p>ISBN: 02</p>
+                <p>Autor: Homero</p>
+                <p>Fecha edición: Siglo VIII A.C.</p>
+                <p>Número de páginas: 585</p>
+                <p>Cantidad de ejemplares: 3</p>
+                <p>Cantidad de ejemplares disponibles: 2</p>
+                <p>Resumen: Ultimos días de la guerra de Troya</p>
+                <p>Tipo de medio del ejemplar: Físico</p>
+                <p>Tema: Literatura Antigua</p>
+                <p>Año: 2016</p>
+                <p class="price">COP $69.000</p>
+                <a href="https://www.panamericanaeditorial.com.co/iliada-661589/p" target="_blank"
+                    rel="noopener noreferrer"> Enlace</a>
+            </div>
+
+            <div class="book-item">
+                <br />
+                <img class="book-images"
+                    src="https://panamericana.vtexassets.com/arquivos/ids/535663-800-auto?v=638466458633900000&width=800&height=auto&aspect=true"
+                    alt="Libro 3">
+                <h3>El Arte de la Guerra </h3>
+                <p>ISBN: 03</p>
+                <p>Autor: Sun Tsu</p>
+                <p>Fecha edición: 2020</p>
+                <p>Número de páginas: 467</p>
+                <p>Cantidad de ejemplares: 1</p>
+                <p>Cantidad de ejemplares disponibles: 0</p>
+                <p>Resumen: Estrategias</p>
+                <p>Tipo de medio del ejemplar:Físico</p>
+                <p>Tema: Literatura Antigua</p>
+                <p>Año: 2020</p>
+                <p class="price">COP $45.000</p>
+                <a href="https://www.panamericana.com.co/el-arte-de-la-guerra-675095/p" target="_blank"
+                    rel="noopener noreferrer"> Enlace</a>
+            </div>
+            <!-- Añade más libros aquí -->
+        </div>
+    </div>
+    <br />
+    <br />
+    <div id="search" hidden>
+        <p> Por favor digite en el formulario los datos del libro que quisiera consultar</p>
+        <form action="">
+            <fieldset>
+                <legend>Busqueda de libros</legend>
+                <p>
+                    <label for="isbn">ISBN: </label>
+                    <input type="number" name="isbn" id="isbn" />
+                </p>
+                <p>
+                    <label for="title">Título: </label>
+                    <input type="text" name="title" id="title" />
+                </p>
+                <p>
+                    <label for="autor">Autor: </label>
+                    <input type="text" name="autor" id="autor" />
+                </p>
+                <p>
+                    <label for="date">Fecha de edición: </label>
+                    <input type="date" name="date" id="date" />
+                </p>
+                <p>
+                    <label for="pages_number">Número de páginas: </label>
+                    <input type="number" name="isbn" id="isbn" />
+                </p>
+            </fieldset>
+        </form>
+    </div>
+    <br />
+    <footer> &copy; Santiago Urueña Latorre 2024.</footer>
+</body>
+
+</html>
