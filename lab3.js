@@ -29,28 +29,6 @@ async function getPages() {
         })
         .catch(error => console.error('Error:', error));
     }
-    // try{
-    //     fetch(`http://localhost:3000/${page}`, options)
-    //     .then(res => res.json())
-    //     .then(data => )
-    // }
-    
-    // try {
-    //     const response = await fetch(`http://localhost:3000/${page}`, options)
-    //     .then(data=>{
-    //         const blob = new Blob([data], { type: 'text/html' });
-    //     });
-    //     if (!response.ok) {
-    //         throw new Error(`Response status: ${response.status}`);
-    //     }
-    //     console.log(response);
-    //     document.getElementById('inlineFrameExample').src = URL.createObjectURL(blob);
-    // } catch (error) {
-    //     console.error(error.message);
-    // }
-    //document.getElementById('inlineFrameExample').src = "localhost:3000/api";
-//     console.log(page);
-//     console.log(method);
 }
 
 async function getData() {
