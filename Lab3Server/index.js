@@ -2,10 +2,10 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-//const routes = require( './rutas/routes.js');
 const path = require("path");
 const bodyParser = require("body-Parser");
 const mongoose = require("mongoose");
+
 //Configuración
 const hostname = "localhost";
 const port = 3000;
@@ -32,32 +32,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Middleware de las bases de datos
 
-// app.get('/libros', async (req, res) => {
-//     try {
-//         const libros = await Libro.find()
-//         res.json(libros)
-//     } catch (err) {
-//         res.status(500).send('Error al obtener libros')
-//     }
-// })
-
-
-
-// app.post('/libros/get', async (req, res) => {
-//     try {
-//         Libro.find({"isbn": req.body.isbn})
-//         .then( (rta) => {
-//             console.log( "HOLIIIIIS") ;
-//             console.log( "rta===>" + rta ) ;
-//             res.send( {msg:"OK",info:rta} ) ;
-//         } )
-//         .catch( (err) => {
-//             console.log( "Error consultando libros:" + err ) ;
-//         } ) ;
-//     } catch (err) {
-//         res.status(500).send('Error al buscar libro')
-//     }
-// })
 
 app.get('/libros', async (req, res) => {
     try {
@@ -121,12 +95,7 @@ app.delete("/libros/:isbn", async (req, res) => {
     }
 });
 
-//Middleware (que aún no se que es)
 
-
-
-//Rutas
-//app.use(routes);
 
 app.post("/pag1.html", (req, res) => {
     res.send(
